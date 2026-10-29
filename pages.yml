@@ -1,0 +1,45 @@
+media:
+  input: assets/logo
+  output: /assets/logo
+
+content:
+  - name: tools
+    label: ابزارها
+    type: file
+    path: data/sites.json
+    format: json
+    fields:
+      - name: tools
+        label: فهرست ابزارها
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: نام ابزار
+            type: string
+            required: true
+          - name: url
+            label: آدرس سایت
+            type: string
+            required: true
+            pattern:
+              regex: '^https://'
+              message: آدرس باید با https:// شروع شود
+          - name: description
+            label: توضیح کوتاه
+            type: text
+            required: true
+          - name: category
+            label: دسته‌بندی
+            type: select
+            required: true
+            options:
+              values:
+                - { value: graphic, label: طراحی و گرافیک }
+                - { value: dev, label: توسعه و کد }
+                - { value: converter, label: تبدیل فایل }
+                - { value: productivity, label: بهره‌وری }
+          - name: popular
+            label: پراستفاده
+            type: boolean
+            default: false

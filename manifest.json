@@ -1,0 +1,27 @@
+{
+    "name":  "گراتولز — دایرکتوری ابزارهای رایگان وب",
+    "short_name":  "گراتولز",
+    "description":  "مجموعه‌ای منتخب از بهترین ابزارهای رایگان طراحی، گرافیک و توسعه وب",
+    "start_url":  "./index.html",
+    "scope":  "./",
+    "display":  "standalone",
+    "orientation":  "any",
+    "background_color":  "#f7f5f3",
+    "theme_color":  "#0060ff",
+    "dir":  "rtl",
+    "lang":  "fa",
+    "icons":  [
+                  {
+                      "purpose":  "any",
+                      "type":  "image/png",
+                      "sizes":  "512x512",
+                      "src":  "assets/icons/icon-512.png"
+                  },
+                  {
+                      "purpose":  "any",
+                      "type":  "image/svg+xml",
+                      "sizes":  "any",
+                      "src":  "assets/logo/logo.svg"
+                  }
+              ]
+}
