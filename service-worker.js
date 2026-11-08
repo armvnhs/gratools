@@ -3,7 +3,7 @@
    هدف: کش کردن فایل‌های اصلی برای بارگذاری سریع‌تر و دسترسی محدود آفلاین
    ========================================================================== */
 
-const CACHE_NAME = "gratools-cache-v4";
+const CACHE_NAME = "gratools-cache-v5";
 
 // فایل‌های اصلی که باید در اولین نصب کش شوند
 const CORE_ASSETS = [
@@ -13,6 +13,8 @@ const CORE_ASSETS = [
   "./manifest.json",
   "./assets/logo/logo.svg",
   "./assets/logo/logo-dark.svg",
+  "./assets/icons/favicon.svg",
+  "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png"
 ];
 

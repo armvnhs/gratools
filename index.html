@@ -7,8 +7,9 @@
 <meta name="description" content="مجموعه‌ای منتخب و رایگان از بهترین ابزارهای طراحی، گرافیک و توسعه وب">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0b5fff">
-<link rel="icon" type="image/svg+xml" href="assets/logo/logo.svg">
-<link rel="apple-touch-icon" href="assets/icons/icon-512.png">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <style>
 /* فونت استعداد (Estedad) از CDN جی‌اس‌دلیور / Fontsource — وزن‌های ۴۰۰ تا ۷۰۰، بدون Black */
@@ -131,6 +132,25 @@ footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--line)}
 .nav .n{min-width:30px;text-align:center;padding:1px 9px;border-radius:8px}
 .acts{display:none}
 @media(max-width:900px){.acts{display:flex}}
+
+/* ===== انیمیشن‌ها ===== */
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+@keyframes fade{from{opacity:0}}
+.card{animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*40ms);transition:border-color .2s,box-shadow .25s,transform .25s cubic-bezier(.2,.7,.2,1),background-color .25s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px -12px rgba(0,0,0,.18)}
+.card:active{transform:scale(.99)}
+.noanim .card{animation:none}
+.head,.srch,.chips{animation:fade .5s ease backwards}
+.side{animation:fade .5s ease backwards}
+body,.side,.srch,.ico,.chip{transition:background-color .3s,border-color .3s,color .3s}
+.nav,.btn,.chip{transition:background-color .2s,color .2s,transform .15s,filter .2s}
+.card:hover .star{color:var(--fg2)}.star{transition:color .2s}
+.modal{display:grid;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s}
+.modal.open{opacity:1;visibility:visible;pointer-events:auto}
+.box{transform:translateY(14px) scale(.97);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.modal.open .box{transform:none}
+.card h3{text-align:right;unicode-bidi:plaintext}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -197,13 +217,13 @@ function render(){
  const q=term.trim().toLowerCase();
  const l=TOOLS.filter(t=>inCat(t,cat)&&(!q||(t.n+t.d).toLowerCase().includes(q)));
  $("title").textContent=CN[cat];
- $("grid").innerHTML=l.length?l.map(t=>`<a class="card" href="${esc(t.h)}" target="_blank" rel="noopener noreferrer"><div class="row"><div class="ico"><img src="${t.icon||"https://www.google.com/s2/favicons?domain="+t.u+"&sz=128"}" alt="" loading="lazy" data-n="${esc(t.n)}"${t.icon?"":' data-f="1"'} onload="if(this.dataset.f&&this.naturalWidth<48)fb(this)" onerror="fb(this)"></div><div><h3 dir="ltr">${esc(t.n)}</h3>${cat==="all"||cat==="hot"?`<small>${CN[t.c]}</small>`:""}</div>${t.hot?`<span class="star" title="پراستفاده" aria-label="پراستفاده">${ic("star")}</span>`:""}</div><p>${esc(t.d)}</p></a>`).join(""):'<div class="empty">چیزی پیدا نشد</div>';
+ $("grid").innerHTML=l.length?l.map((t,i)=>`<a class="card" style="--i:${Math.min(i,14)}" href="${esc(t.h)}" target="_blank" rel="noopener noreferrer"><div class="row"><div class="ico"><img src="${t.icon||"https://www.google.com/s2/favicons?domain="+t.u+"&sz=128"}" alt="" loading="lazy" data-n="${esc(t.n)}"${t.icon?"":' data-f="1"'} onload="if(this.dataset.f&&this.naturalWidth<48)fb(this)" onerror="fb(this)"></div><div><h3>${esc(t.n)}</h3>${cat==="all"||cat==="hot"?`<small>${CN[t.c]}</small>`:""}</div>${t.hot?`<span class="star" title="پراستفاده" aria-label="پراستفاده">${ic("star")}</span>`:""}</div><p>${esc(t.d)}</p></a>`).join(""):'<div class="empty">چیزی پیدا نشد</div>';
 }
 /* آیکون جایگزین: حرف اول نام روی یک رنگ ملایم (وقتی آیکونی نیست یا فقط کرهٔ پیش‌فرض آمده) */
 function fb(img){const n=img.dataset.n||"?";let s=0;for(const c of n)s=(s*31+c.charCodeAt(0))%360;const p=img.parentNode;p.style.background=`hsl(${s} 70% 92%)`;p.style.color=`hsl(${s} 55% 32%)`;p.style.fontSize="18px";p.textContent=n[0].toUpperCase()}
-const pick=e=>{const b=e.target.closest("[data-k]");if(b){cat=b.dataset.k;nav();render()}};
+const pick=e=>{const b=e.target.closest("[data-k]");if(b){cat=b.dataset.k;$("grid").classList.remove("noanim");nav();render()}};
 $("sideNav").onclick=pick;$("chips").onclick=pick;
-$("q").oninput=e=>{term=e.target.value;render()};
+$("q").oninput=e=>{term=e.target.value;$("grid").classList.add("noanim");render()};
 document.addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement.tagName!=="INPUT"){e.preventDefault();$("q").focus()}if(e.key==="Escape")document.querySelectorAll?.(".modal.open").forEach(m=>m.classList.remove("open"))});
 const R=document.documentElement;
 function theme(d,save){R.dataset.theme=d;$("tl").classList.toggle("on",d!=="dark");$("td").classList.toggle("on",d==="dark");if(save)try{localStorage.setItem("gratools-theme",d)}catch(e){}}
