@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>گراتولز | دایرکتوری ابزارهای رایگان وب</title>
+<meta name="description" content="مجموعه‌ای منتخب و رایگان از بهترین ابزارهای طراحی، گرافیک و توسعه وب">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b5fff">
+<link rel="icon" type="image/svg+xml" href="assets/logo/logo.svg">
+<link rel="apple-touch-icon" href="assets/icons/icon-512.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<style>
+/* فونت استعداد (Estedad) از CDN جی‌اس‌دلیور / Fontsource — وزن‌های ۴۰۰ تا ۷۰۰، بدون Black */
+@font-face{font-family:Estedad;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:Estedad;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Estedad;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-arabic-500-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:Estedad;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Estedad;font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-arabic-600-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:Estedad;font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Estedad;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-arabic-700-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:Estedad;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/estedad@5.3.0/files/estedad-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--bg:#fff;--panel:#fafafa;--gray:#f5f5f5;--inner:#fff;--line:#e8e8ea;--fg:#141416;--fg2:#6b6b73;
+--blue:#0b5fff;--blue-2:#2f7bff;--lime:#d9f7a3;--lime-fg:#3a5a0c;--chip:#eef0f3;
+--font:Estedad,Vazirmatn,Tahoma,system-ui,sans-serif;color-scheme:light}
+:root[data-theme=dark]{--bg:#0a0a0c;--panel:#111114;--gray:#151518;--inner:#1d1d21;--line:#28282d;--fg:#f4f4f5;--fg2:#a1a1aa;
+--lime:#2b3d0f;--lime-fg:#c4f06a;--chip:#26262b;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.logo-dark,:root[data-theme=dark] .logo-light{display:none}:root[data-theme=dark] .logo-dark{display:block}
+.shell{display:flex;gap:16px;padding:12px;min-height:100vh}
+/* سایدبار شناور */
+.side{position:sticky;top:12px;height:calc(100vh - 24px);width:268px;flex:none;display:flex;flex-direction:column;gap:6px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:30px;overflow-y:auto}
+.brand{display:flex;align-items:center;justify-content:space-between;padding:4px 6px 8px}
+.brand img{height:30px}
+.nav{display:flex;align-items:center;gap:12px;width:100%;height:42px;padding-inline:14px;border-radius:12px;font-size:14.5px;font-weight:500;color:var(--fg2);text-align:start;transition:.15s}
+.nav:hover{background:var(--chip);color:var(--fg)}
+.nav .n{margin-inline-start:auto;font-size:12px}
+.nav.on{background:linear-gradient(180deg,#3a82ff 0%,#0b5fff 100%);color:#fff;font-weight:600;box-shadow:0 0 0 1px #0a52d8,inset 0 1px 0 rgba(255,255,255,.28),0 2px 6px rgba(11,95,255,.35)}
+.nav.on .n{background:rgba(255,255,255,.24);color:#fff;font-weight:600;padding:1px 9px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.spacer{flex:1}
+.tt{display:inline-flex;padding:4px;gap:2px;border-radius:99px;background:var(--chip);align-self:flex-start;margin:6px 4px}
+.tt button{width:34px;height:34px;border-radius:99px;display:grid;place-items:center;color:var(--fg2)}
+.tt button.on{background:var(--inner);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+/* محتوا */
+.main{flex:1;min-width:0;max-width:1180px;margin-inline:auto;padding:14px 12px 32px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.head h1{font-size:26px;font-weight:600}
+.acts{display:flex;gap:8px}
+/* دکمه‌ها مثل BoardUI */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding-inline:16px;border-radius:12px;font-size:14px;font-weight:600;white-space:nowrap;transition:.15s}
+.btn.pri{background:linear-gradient(180deg,#3a82ff 0%,#0b5fff 100%);color:#fff;font-weight:600;box-shadow:0 0 0 1px #0a52d8,inset 0 1px 0 rgba(255,255,255,.28),0 2px 6px rgba(11,95,255,.35)}
+.btn.pri:hover{filter:brightness(1.07)}
+.btn.sec{background:var(--inner);border:1px solid var(--line);color:var(--fg);font-weight:500}
+.btn.sec:hover{background:var(--chip)}
+.btn.sq{width:40px;padding:0}
+.btn:active{transform:scale(.97)}
+/* کارت‌های آمار */
+.pill{font-size:12px;font-weight:600;padding:2px 10px;border-radius:8px;background:var(--lime);color:var(--lime-fg)}
+/* پنل ابزارها */
+.panel{background:var(--gray);border-radius:28px;padding:18px}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ph span{font-size:14px;color:var(--fg2)}.ph b{display:block;font-size:26px;font-weight:600;line-height:1.3}
+.seg{display:inline-flex;padding:3px;gap:2px}
+.seg button{padding:5px 14px;border-radius:9px;font-size:14px;color:var(--fg2)}
+.seg button.on{background:var(--inner);color:var(--fg);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.srch{display:flex;align-items:center;gap:10px;height:46px;padding-inline:14px;background:var(--inner);border:1px solid var(--line);border-radius:14px;color:var(--fg2);margin-bottom:14px;transition:.15s}
+.srch:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px rgba(11,95,255,.15)}
+.srch input{flex:1;min-width:0;height:100%;border:0;outline:0;background:none;font:inherit;font-size:14.5px;color:var(--fg)}
+.chips{display:none;gap:8px;overflow-x:auto;margin-bottom:14px;scrollbar-width:none}
+.chip{flex:none;padding:7px 14px;border-radius:99px;font-size:13px;font-weight:500;background:var(--inner);color:var(--fg2)}
+.chip.on{background:var(--blue);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.card{display:flex;flex-direction:column;gap:12px;padding:16px;background:var(--inner);border-radius:20px;transition:.2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px -14px rgba(0,0,0,.25)}
+.row{display:flex;align-items:center;gap:12px}
+.ico{width:46px;height:46px;border-radius:14px;background:var(--gray);display:grid;place-items:center;overflow:hidden;font-weight:700;color:var(--fg2)}
+.ico img{width:28px;height:28px;object-fit:contain}
+.card h3{font-size:16px;font-weight:600;line-height:1.4}.card small{font-size:12px;color:var(--fg2)}
+.card p{font-size:13.5px;color:var(--fg2);line-height:1.9;flex:1}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tag{font-size:12px;font-weight:600;padding:2px 10px;border-radius:8px;background:var(--lime);color:var(--lime-fg)}
+.card .btn{height:34px;padding-inline:12px;font-size:13px}
+.empty{grid-column:1/-1;text-align:center;color:var(--fg2);padding:48px 0}
+footer{margin-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--fg2)}
+.modal{position:fixed;inset:0;z-index:20;display:none;place-items:center;padding:16px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px)}
+.modal.open{display:grid}
+.box{position:relative;width:min(440px,100%);padding:28px;background:var(--inner);border-radius:28px}
+.box .btn{position:absolute;top:14px;inset-inline-start:14px}
+.box h3{font-size:20px;font-weight:700;margin:10px 0}.box p{color:var(--fg2);font-size:14.5px;margin-top:8px}.box strong{color:var(--fg)}
+.mtop{display:none}
+@media(max-width:900px){.side{display:none}.chips{display:flex}.shell{padding:8px}.mtop{display:flex;align-items:center;justify-content:space-between;padding:6px 8px 10px}.mtop img{height:28px}.crumb{display:none}.head h1{font-size:22px}.acts .btn.sec span{display:none}.acts .btn.sec{width:40px;padding:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== نسخهٔ مینیمال ===== */
+.shell{gap:0;padding:0}
+.side{top:0;height:100vh;width:244px;padding:20px 12px;border:0;border-inline-end:1px solid var(--line);border-radius:0;background:var(--bg)}
+.main{padding:32px clamp(16px,4vw,48px) 40px;max-width:1120px}
+.head{margin-bottom:20px}.head h1{font-size:22px}
+.panel{background:none;padding:0;border-radius:0}
+.ph{margin-bottom:12px}.ph span{display:none}.ph b{font-size:14px;font-weight:500;color:var(--fg2)}
+.srch{background:var(--bg);border-radius:12px;box-shadow:none}
+.seg button.on{background:var(--chip);box-shadow:none}
+.grid{gap:12px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px;gap:10px}
+.card:hover{transform:none;box-shadow:none;border-color:var(--fg2)}
+.ico{width:40px;height:40px;border-radius:10px;background:var(--gray)}.ico img{width:24px;height:24px}
+.card h3{font-size:15px}.card p{font-size:13px;line-height:1.85}
+.tag{background:var(--chip);color:var(--fg2);font-weight:500}
+.card .btn.sec{background:none;border:0;height:auto;padding:0;color:var(--fg2);font-weight:500;gap:4px}
+.card:hover .btn.sec{color:var(--blue)}
+footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--line)}
+.card .tag{margin-inline-start:auto;align-self:flex-start}
+.card p{flex:none}
+.card .star{margin-inline-start:auto;align-self:flex-start;color:var(--line);display:grid}
+.card .star svg{fill:currentColor;width:20px;height:20px}
+.ico img{width:100%;height:100%;object-fit:cover}
+:root[data-theme=dark] .ico[style]{filter:brightness(.9)}
+.fld{display:block;font-size:13px;font-weight:500;color:var(--fg2);margin-top:12px}
+.fld input,.fld textarea,.fld select{display:block;width:100%;margin-top:6px;padding:10px 12px;font:inherit;font-size:14px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:12px;outline:0;resize:vertical}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(11,95,255,.15)}
+#sform .btn{width:100%;margin-top:16px}
+.fmsg{min-height:20px;margin-top:10px!important;font-size:13px!important}.fmsg.ok{color:#15803d!important}.fmsg.err{color:#dc2626!important}
+.box{max-height:calc(100vh - 32px);overflow-y:auto}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" aria-label="دسته‌بندی‌ها">
+  <a class="brand" href="./"><img class="logo-light" src="assets/logo/logo.svg" alt="گراتولز"><img class="logo-dark" src="assets/logo/logo-dark.svg" alt=""></a>
+  <div id="sideNav"></div>
+  <div class="spacer"></div>
+  <div class="tt" role="group" aria-label="تم"><button id="tl" aria-label="روشن"><svg viewBox="0 0 24 24"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg></button><button id="td" aria-label="تاریک"><svg viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" /></svg></button></div>
+  <button class="nav" id="aboutBtn"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /> <path d="M12 9h.01" /> <path d="M11 12h1v4h1" /></svg>درباره ما</button>
+  <button class="nav" id="sugBtn"><svg viewBox="0 0 24 24"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></svg>پیشنهاد ابزار</button>
+</aside>
+
+<div class="main">
+  <div class="mtop"><a href="./"><img class="logo-light" src="assets/logo/logo.svg" alt="گراتولز"><img class="logo-dark" src="assets/logo/logo-dark.svg" alt=""></a><button class="btn sec sq" id="tm" aria-label="تغییر تم"><svg viewBox="0 0 24 24"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg></button></div>
+  <div class="head"><h1 id="title">همه ابزارها</h1>
+    <div class="acts"><button class="btn sec" id="aboutBtn2"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /> <path d="M12 9h.01" /> <path d="M11 12h1v4h1" /></svg><span>درباره ما</span></button>
+    <button class="btn pri" id="sugBtn2"><svg viewBox="0 0 24 24"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></svg>پیشنهاد ابزار</button></div></div>
+  <div class="panel">
+    <div class="ph"><div><span>ابزارهای این دسته</span><b id="cnt">۰</b></div>
+      <div class="seg" id="seg"><button data-s="all" class="on">همه</button><button data-s="hot">پراستفاده</button></div></div>
+    <label class="srch"><svg viewBox="0 0 24 24"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /> <path d="M21 21l-6 -6" /></svg><input id="q" type="search" placeholder="جستجو در ابزارها..." autocomplete="off"></label>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </div>
+  <footer><span>© ۱۴۰۴ گراتولز</span><a href="https://github.com/armvnhs/Gratools" target="_blank" rel="noopener noreferrer">گیت‌هاب</a></footer>
+</div>
+</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="box"><button class="btn sec sq" id="close" aria-label="بستن"><svg viewBox="0 0 24 24"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></svg></button>
+  <img class="logo-light" src="assets/logo/logo.svg" alt="" height="34"><img class="logo-dark" src="assets/logo/logo-dark.svg" alt="" height="34">
+  <h3 id="mt">درباره ما</h3>
+  <p>سلام! من سازنده <strong>گراتولز</strong> هستم. این پروژه را با این آرمان ساختم که دسترسی به ابزارهای رایگان و کاربردی وب برای همه ساده‌تر باشد.</p>
+  <p>گراتولز یک پروژه متن‌باز است و با کمک پیشنهادهای شما در گیت‌هاب، روزبه‌روز کامل‌تر می‌شود.</p></div>
+</div>
+<div class="modal" id="sug" role="dialog" aria-modal="true" aria-labelledby="st">
+  <div class="box"><button class="btn sec sq" id="sclose" type="button" aria-label="بستن"><svg viewBox="0 0 24 24"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg></button>
+  <h3 id="st">پیشنهاد ابزار</h3>
+  <p>ابزار رایگان خوبی می‌شناسی؟ بعد از بررسی به لیست اضافه می‌شود.</p>
+  <form id="sform" novalidate>
+    <input type="hidden" name="_subject" value="پیشنهاد ابزار جدید برای گراتولز">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+    <label class="fld">نام ابزار<input name="name" required maxlength="80" placeholder="مثلاً Remove.bg"></label>
+    <label class="fld">آدرس سایت<input name="url" type="url" required dir="ltr" placeholder="https://example.com"></label>
+    <label class="fld">توضیح کوتاه<textarea name="description" required maxlength="300" rows="3" placeholder="در یک جمله بگو این ابزار چه کاری می‌کند"></textarea></label>
+    <label class="fld">دسته‌بندی<select name="category"><option value="graphic">طراحی و گرافیک</option><option value="dev">توسعه و کد</option><option value="converter">تبدیل فایل</option><option value="productivity">بهره‌وری</option></select></label>
+    <p class="fmsg" id="fmsg" role="status"></p>
+    <button class="btn pri" id="fsend" type="submit">ارسال پیشنهاد</button>
+  </form></div>
+</div>
+<script>
+let TOOLS=[];
+const P={all:"layout-grid",hot:"bolt",graphic:"palette",dev:"code",converter:"transform",productivity:"checklist"};
+const CATS=[["all","همه ابزارها"],["hot","پراستفاده‌ترین"],["graphic","طراحی و گرافیک"],["dev","توسعه و کد"],["converter","تبدیل فایل"],["productivity","بهره‌وری"]];
+const CN=Object.fromEntries(CATS);const $=i=>document.getElementById(i);const fa=n=>n.toLocaleString("fa-IR");
+const IC={"star":"<path d=\"M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245\" />","layout-grid": "<path d=\"M4 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4\" /> <path d=\"M14 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4\" /> <path d=\"M4 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4\" /> <path d=\"M14 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4\" />", "bolt": "<path d=\"M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11\" />", "palette": "<path d=\"M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25\" /> <path d=\"M7.5 10.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" /> <path d=\"M11.5 7.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" /> <path d=\"M15.5 10.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" />", "code": "<path d=\"M7 8l-4 4l4 4\" /> <path d=\"M17 8l4 4l-4 4\" /> <path d=\"M14 4l-4 16\" />", "transform": "<path d=\"M3 6a3 3 0 1 0 6 0a3 3 0 0 0 -6 0\" /> <path d=\"M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3\" /> <path d=\"M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3\" /> <path d=\"M15 18a3 3 0 1 0 6 0a3 3 0 0 0 -6 0\" />", "checklist": "<path d=\"M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8\" /> <path d=\"M14 19l2 2l4 -4\" /> <path d=\"M9 8h4\" /> <path d=\"M9 12h2\" />", "search": "<path d=\"M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0\" /> <path d=\"M21 21l-6 -6\" />", "info-circle": "<path d=\"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0\" /> <path d=\"M12 9h.01\" /> <path d=\"M11 12h1v4h1\" />", "plus": "<path d=\"M12 5l0 14\" /> <path d=\"M5 12l14 0\" />", "arrow-up-right": "<path d=\"M17 7l-10 10\" /> <path d=\"M8 7l9 0l0 9\" />", "sun": "<path d=\"M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0\" /> <path d=\"M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7\" />", "moon": "<path d=\"M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008\" />", "x": "<path d=\"M18 6l-12 12\" /> <path d=\"M6 6l12 12\" />", "check": "<path d=\"M5 12l5 5l10 -10\" />", "chevron-left": "<path d=\"M15 6l-6 6l6 6\" />"};
+const ic=n=>`<svg viewBox="0 0 24 24">${IC[n]}</svg>`;
+let cat="all",seg="all",term="";
+const inCat=(t,k)=>k==="all"||(k==="hot"?t.hot:t.c===k);
+const esc=s=>s.replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+function nav(){
+ $("sideNav").innerHTML=CATS.map(([k,l])=>`<button class="nav ${k===cat?"on":""}" data-k="${k}">${ic(P[k])}${l}<span class="n">${fa(TOOLS.filter(t=>inCat(t,k)).length)}</span></button>`).join("");
+ $("chips").innerHTML=CATS.map(([k,l])=>`<button class="chip ${k===cat?"on":""}" data-k="${k}">${l}</button>`).join("");
+}
+function render(){
+ const q=term.trim().toLowerCase();
+ const l=TOOLS.filter(t=>inCat(t,cat)&&(seg==="all"||t.hot)&&(!q||(t.n+t.d).toLowerCase().includes(q)));
+ $("title").textContent=CN[cat];$("cnt").textContent=fa(l.length);
+ $("grid").innerHTML=l.length?l.map(t=>`<a class="card" href="${esc(t.h)}" target="_blank" rel="noopener noreferrer"><div class="row"><div class="ico"><img src="${t.icon||"https://www.google.com/s2/favicons?domain="+t.u+"&sz=128"}" alt="" loading="lazy" data-n="${esc(t.n)}"${t.icon?"":' data-f="1"'} onload="if(this.dataset.f&&this.naturalWidth<48)fb(this)" onerror="fb(this)"></div><div><h3 dir="ltr">${esc(t.n)}</h3><small>${CN[t.c]}</small></div>${t.hot?`<span class="star" title="پراستفاده" aria-label="پراستفاده">${ic("star")}</span>`:""}</div><p>${esc(t.d)}</p></a>`).join(""):'<div class="empty">چیزی پیدا نشد</div>';
+}
+/* آیکون جایگزین: حرف اول نام روی یک رنگ ملایم (وقتی آیکونی نیست یا فقط کرهٔ پیش‌فرض آمده) */
+function fb(img){const n=img.dataset.n||"?";let s=0;for(const c of n)s=(s*31+c.charCodeAt(0))%360;const p=img.parentNode;p.style.background=`hsl(${s} 70% 92%)`;p.style.color=`hsl(${s} 55% 32%)`;p.style.fontSize="18px";p.textContent=n[0].toUpperCase()}
+const pick=e=>{const b=e.target.closest("[data-k]");if(b){cat=b.dataset.k;nav();render()}};
+$("sideNav").onclick=pick;$("chips").onclick=pick;
+$("seg").onclick=e=>{const b=e.target.closest("[data-s]");if(!b)return;seg=b.dataset.s;[...$("seg").children].forEach(x=>x.classList.toggle("on",x===b));render()};
+$("q").oninput=e=>{term=e.target.value;render()};
+document.addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement.tagName!=="INPUT"){e.preventDefault();$("q").focus()}if(e.key==="Escape")document.querySelectorAll?.(".modal.open").forEach(m=>m.classList.remove("open"))});
+const R=document.documentElement;
+function theme(d,save){R.dataset.theme=d;$("tl").classList.toggle("on",d!=="dark");$("td").classList.toggle("on",d==="dark");if(save)try{localStorage.setItem("gratools-theme",d)}catch(e){}}
+let t0="light";try{t0=localStorage.getItem("gratools-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}catch(e){}
+theme(t0);$("tl").onclick=()=>theme("light",1);$("td").onclick=()=>theme("dark",1);$("tm").onclick=()=>theme(R.dataset.theme==="dark"?"light":"dark",1);
+const op=()=>$("modal").classList.add("open");$("aboutBtn").onclick=op;$("aboutBtn2").onclick=op;
+$("close").onclick=()=>$("modal").classList.remove("open");$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").classList.remove("open")};
+async function load(){
+ try{const r=await fetch("data/sites.json");if(!r.ok)throw 0;const d=await r.json();
+  TOOLS=(Array.isArray(d)?d:d.tools||[]).map(s=>{let u;try{u=new URL(s.url)}catch(e){return null}
+   if(u.protocol!=="https:"&&u.protocol!=="http:")return null;
+   return{n:String(s.name||"?"),d:String(s.description||""),h:u.href,u:u.hostname,c:s.category,hot:!!s.popular,icon:s.icon?String(s.icon).replace(/^\//,""):""}}).filter(Boolean);
+  nav();render()}
+ catch(e){$("grid").innerHTML='<div class="empty">خطا در بارگذاری ابزارها. لطفاً دوباره تلاش کنید.</div>'}}
+/* فرم پیشنهاد ابزار — آدرس Formspree خودت را اینجا بگذار (https://formspree.io/f/xxxxxxxx) */
+const FORM_URL="https://formspree.io/f/YOUR_FORM_ID";
+const sug=$("sug"),sf=$("sform"),fm=$("fmsg");
+const openSug=()=>{fm.textContent="";fm.className="fmsg";sug.classList.add("open");sf.name.focus()};
+$("sugBtn").onclick=openSug;$("sugBtn2").onclick=openSug;
+$("sclose").onclick=()=>sug.classList.remove("open");
+sug.onclick=e=>{if(e.target===sug)sug.classList.remove("open")};
+sf.onsubmit=async e=>{e.preventDefault();
+ if(!sf.reportValidity())return;
+ if(!/^https:\/\//i.test(sf.url.value.trim())){fm.className="fmsg err";fm.textContent="آدرس باید با https:// شروع شود.";return}
+ if(FORM_URL.includes("YOUR_FORM_ID")){fm.className="fmsg err";fm.textContent="آدرس فرم هنوز تنظیم نشده است.";return}
+ const b=$("fsend");b.disabled=true;fm.className="fmsg";fm.textContent="در حال ارسال...";
+ try{const r=await fetch(FORM_URL,{method:"POST",body:new FormData(sf),headers:{Accept:"application/json"}});
+  if(!r.ok)throw 0;sf.reset();fm.className="fmsg ok";fm.textContent="ممنون! پیشنهادت ارسال شد."}
+ catch(err){fm.className="fmsg err";fm.textContent="ارسال نشد. لطفاً دوباره تلاش کن."}
+ b.disabled=false};
+load();
+</script>
+</body>
+</html>
