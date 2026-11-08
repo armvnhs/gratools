@@ -8,47 +8,50 @@ media:
 
 content:
   - name: tools
-    label: ابزارها
+    label: Tools
     type: file
     path: data/sites.json
     format: json
     fields:
       - name: tools
-        label: فهرست ابزارها
+        label: Tools list
         type: object
-        list: true
+        list:
+          collapsible:
+            state: collapsed
+            summary: "{fields.name}"
         fields:
           - name: name
-            label: نام ابزار
+            label: Name
             type: string
             required: true
           - name: url
-            label: آدرس سایت
+            label: Website URL
             type: string
             required: true
             pattern:
               regex: '^https://'
-              message: آدرس باید با https:// شروع شود
+              message: URL must start with https://
           - name: description
-            label: توضیح کوتاه
+            label: Description
             type: text
             required: true
           - name: category
-            label: دسته‌بندی
+            label: Category
             type: select
             required: true
             options:
               values:
-                - { value: graphic, label: طراحی و گرافیک }
-                - { value: dev, label: توسعه و کد }
-                - { value: converter, label: تبدیل فایل }
-                - { value: productivity, label: بهره‌وری }
+                - { value: graphic, label: Design & Graphics }
+                - { value: dev, label: Development & Code }
+                - { value: converter, label: File Converters }
+                - { value: productivity, label: Productivity }
           - name: popular
-            label: پراستفاده
+            label: Popular
             type: boolean
             default: false
           - name: icon
-            label: آیکون (اختیاری، مربع و حداقل ۱۲۸ پیکسل)
+            label: Icon (optional, square, at least 128px)
             type: image
             options:
               media: tools
